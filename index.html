@@ -2,23 +2,45 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>meu site</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div class="prinipal">
-        <div>
-            <h1 id="TituloPrincipal">TITULO</h1>
+    <!--cabeçalho-->
+    <header>
+        <h2>Meu site </h2>
+        <div class="menuheader">
+            <a href="">home</a>
+            <a href="">cadastro</a>
+            <a href="">menu</a>
         </div>
-        <div>
-            <button onclick="AlterarTitulo()">ALTERAR TITULO</button>
-            <button onclick="desfazerAlteracao()">DESFAZER ALTERAÇÃO</button>
+    </header>
+    <!--principal-->
+    <main>
+        <h2>cadastro</h2>
+
+        <form action="">
+            <div class="cadastro">
+                <input type="text" placeholder="usuario">
+                <input type="text" placeholder="senha">
+                <input type="text" placeholder="email">
+                <button onclick="">entre</button>
+            </div>
+        </form>
+    </main>
+    <!--rodape-->
+    <footer>
+        <div class="botoes">
+            <a href="">Sobre</a>
+            <a href="">Privacidade</a>
+            <a href="">Termos</a>
+            <a href="">Configurações</a>
         </div>
-    </div>
-    <script src="script.js"></script>
+    </footer>
+
 </body>
 
 </html>
