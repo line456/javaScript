@@ -1,20 +1,37 @@
 //MARTELO, PREGO, ALICATE, PARAFUSO
 //19,90     10,00    23,00   a = 10
 
-const precos={
+const precos={ //dicionario
     "parafuso":19.90,
     "martelo":23.70,
     "chave de fenda": 10.99,
     "serrote":30.00,
 };
-//atualizar campo de preço automaticamente ao escolher produto
-document.getElementById('produto').addEventListener('change',function(){
-    const produtoSelecionado = this.ariaValueMax;
-    const precos = 
-    precos [produtoSelecionado] ||"";
-    document.getElementById('preco').value = precos ? precos.toFixed(2):"";
-})
+
+const estoque={
+    "parafuso": 100,
+    "martelo":4,
+    "chave de fenda": 6,
+    "serrote":1000,
+};
+
+//ACESSAR GUARDAR A QUANTIDAde
+//calcular o preço total 
 function calcularPreco(){
-    const produto  = 
-    document.get
+
+    let qtd = document.getElementById("quantidade").value;// pega aquantidade atual digitada 
+    let escolha = document.getElementById("produto").value;//pega o nome do produto selecionado 
+    let valortotal = qtd * precos[escolha] // calcular o valor total multiplicando o preço do produto pela quantidade
+    //DECISAO
+    //pra ve o que tem no estoque 
+    if(estoque[escolha] - qtd >= 0){ 
+        estoque[escolha] -= qtd; // calculo do estoque pra quando for tirando
+         
+    // aparece a mensagem na tela se não tive mais nada no estoque 
+    }else{
+        window.alert("ESTOQUE INDISPONIVEL")
+    }
+    console.log(estoque[escolha]) 
+    document.getElementById("resultado").innerHTML = valortotal.toFixed(2); //exibir o resultado 
+    
 }
