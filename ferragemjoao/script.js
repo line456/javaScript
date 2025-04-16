@@ -24,14 +24,19 @@ function calcularPreco(){
     let valortotal = qtd * precos[escolha] // calcular o valor total multiplicando o preço do produto pela quantidade
     //DECISAO
     //pra ve o que tem no estoque 
-    if(estoque[escolha] - qtd >= 0){ 
+    if(estoque[escolha] - qtd >= 0){
+        document.getElementById("resultado").innerHTML = valortotal.toFixed(2); //exibir o resultado 
         estoque[escolha] -= qtd; // calculo do estoque pra quando for tirando
+        window.alert("compra realizada com sucesso "  + "valor total: " + valortotal.toFixed(2))
          
     // aparece a mensagem na tela se não tive mais nada no estoque 
     }else{
         window.alert("ESTOQUE INDISPONIVEL")
     }
     console.log(estoque[escolha]) 
-    document.getElementById("resultado").innerHTML = valortotal.toFixed(2); //exibir o resultado 
+  
+    
+
+
     
 }
