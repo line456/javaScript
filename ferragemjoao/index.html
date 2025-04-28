@@ -1,29 +1,34 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ferragens joão</title>
+    <title>Ferragens João</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <h2>Ferragens João</h2>
-    <label for="produto">produto</label>
-    <select id="produto">
-     <option value="">--selecione um produto</option>
-     <option value="parafuso">parafuso</option>
-     <option value="martelo">martelo</option>
-     <option value="chave de fenda">chave de fenda</option>
-     <option value="serrote">serrote</option>
-    </select>
-
-
-    <label for="quantidade">quantidade:</label>
-    <input type="number" id="quantidade" min="0" placeholder="digite a quantidade"><b><br> <!--quantidade de produto -->
-<label for="">ESTOQUE</label><h5></h5>
-    <button onclick="calcularPreco()">COMPRAR</button>  
-    <h4 id="resultado"></h4>
-    <script src="script.js"></script>
+    <div class="container">
+        <div class="product-card">
+            <h1 class="title">Ferragens João</h1>
+            <p class="product-label">Produto:</p>
+            <select class="product-list">
+                <option value="produto1">martelo</option>
+                <option value="produto2">parafuso</option>
+                <option value="produto3">prego</option>
+                <option value="produto3">bota</option>
+                <option value="produto3">trelisça</option>
+                <option value="produto3">makita</option>
+                <option value="produto3">parafusadeira</option>
+            </select>
+            
+            <p class="quantity-label">Quantidade:</p>
+            <input type="number" class="quantity-input" min="1" value="1">
+            
+            <div class="buttons">
+                <button class="add-to-cart">ADICIONAR AO CARRINHO</button>
+                <button class="calculate-price">CALCULAR PREÇO</button>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
