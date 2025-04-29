@@ -11,24 +11,25 @@
         <div class="product-card">
             <h1 class="title">Ferragens João</h1>
             <p class="product-label">Produto:</p>
-            <select class="product-list">
-                <option value="produto1">martelo</option>
-                <option value="produto2">parafuso</option>
-                <option value="produto3">prego</option>
-                <option value="produto3">bota</option>
-                <option value="produto3">trelisça</option>
-                <option value="produto3">makita</option>
-                <option value="produto3">parafusadeira</option>
+            <select class="product-list" id="produto">
+                <option value="martelo">martelo</option>
+                <option value="parafuso">parafuso</option>
+                <option value="prego">prego</option>
+                <option value="chave de fenda ">chave de fenda</option>
+            <option value="serrote">serrote</option>
             </select>
             
             <p class="quantity-label">Quantidade:</p>
-            <input type="number" class="quantity-input" min="1" value="1">
+            <input type="number" id="quantidade" class="quantity-input" min="0" value="1">
             
             <div class="buttons">
                 <button class="add-to-cart">ADICIONAR AO CARRINHO</button>
-                <button class="calculate-price">CALCULAR PREÇO</button>
+                <button onclick="calcularPreco()">CALCULAR PREÇO</button>
             </div>
+            <h4 id="resultado"></h4>
         </div>
+        
     </div>
+    <script src="script.js"></script>
 </body>
 </html>
