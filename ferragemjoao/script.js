@@ -28,15 +28,29 @@ function calcularPreco(){
         document.getElementById("resultado").innerHTML = valortotal.toFixed(2); //exibir o resultado 
         estoque[escolha] -= qtd; // calculo do estoque pra quando for tirando
         window.alert("compra realizada com sucesso "  + "valor total: " + valortotal.toFixed(2))
-         
+    
     // aparece a mensagem na tela se não tive mais nada no estoque 
     }else{
         window.alert("ESTOQUE INDISPONIVEL")
     }
-    console.log(estoque[escolha]) 
-  
-    
+    console.log(estoque[escolha])    
+}
 
 
-    
+function adicionarEstoque (){
+
+        let qtd = document.getElementById("quantidade").value;// pega aquantidade atual digitada 
+        let escolha = document.getElementById("produto").value;//pega o nome do produto selecionado 
+        
+        //pra ve o que tem no estoque 
+        if(qtd > 0){
+             
+            estoque[escolha] += qtd; // calculo do estoque pra quando for tirando
+            window.alert("Adicionado no estoque com sucesso ")
+        
+        // aparece a mensagem na tela se não tive mais nada no estoque 
+        }else{
+            window.alert("ESTOQUE INDISPONIVEL")
+        }
+        console.log(estoque[escolha])        
 }
