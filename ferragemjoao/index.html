@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <div class="container">
         <div class="product-card">
             <h1 class="title">Ferragens João 🛠️</h1>
@@ -23,14 +24,43 @@
             <input type="number" id="quantidade" class="quantity-input" min="1" value="1">
             
             <div class="buttons">
-                <button class="add-to-cart" onclick="adicionarAoCarrinho()">Adicionar ao Carrinho</button>
-                <button class="calculate-price" onclick="calcularPreco()">Calcular Preço</button>
-            </div>
 
-            <div id="mensagem" class="mensagem"></div>
-            <h4 id="resultado"></h4>
+
+                <button class="add-to-cart">ADICIONAR AO CARRINHO</button>
+                <button onclick="calcularPreco()">CALCULAR PREÇO</button>
+                <p id="resultado"></p>
+            </div>
+          
+        </div>
+        
+    </div>
+
+    <!--sjdfhskhfsdjfhsjhfsdfh-->
+
+    
+    <div class="container">
+        <div class="product-card">
+            <h1 class="title">Estoque João</h1>
+            <p class="product-label">Produto:</p>
+            <select class="product-list" id="produto-estoque">
+                <option value="martelo">martelo</option>
+                <option value="parafuso">parafuso</option>
+                <option value="chave-de-fenda">chave-de-fenda</option>
+            <option value="serrote">serrote</option>
+            </select>
+            
+            <p class="quantity-label">Quantidade:</p>
+            <input type="number" id="quantidade-estoque" class="quantity-input" min="0" value="1">
+            
+            <div class="buttons">
+                <button onclick="adicionarEstoque()">Add estoque</button>
+            </div>
+    
+            
+>>>>>>> 182983e07004e1dba11c0a5420b04ce105959b66
         </div>
     </div>
     <script src="script.js"></script>
+
 </body>
 </html>

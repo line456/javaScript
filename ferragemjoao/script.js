@@ -1,9 +1,11 @@
+
 const precos = {
     "parafuso": 19.90,
     "martelo": 23.70,
     "chave de fenda": 10.99,
     "serrote": 30.00,
     "prego": 10.00
+
 };
 
 const estoque = {
@@ -12,7 +14,7 @@ const estoque = {
     "chave de fenda": 6,
     "serrote": 1000,
     "prego": 50
-};
+}
 
 function calcularPreco() {
     const qtd = parseInt(document.getElementById("quantidade").value);
@@ -25,7 +27,9 @@ function calcularPreco() {
         return;
     }
 
+
     const valortotal = qtd * precos[escolha];
+
 
     if (estoque[escolha] >= qtd) {
         resultado.textContent = `Valor total: R$ ${valortotal.toFixed(2)}`;
@@ -50,3 +54,4 @@ function exibirMensagem(texto, tipo) {
     mensagem.className = `mensagem ${tipo}`;
     mensagem.style.display = 'block';
 }
+
