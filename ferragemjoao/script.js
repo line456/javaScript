@@ -4,14 +4,14 @@
 const precos={ //dicionario
     "parafuso":19.90,
     "martelo":23.70,
-    "chave de fenda": 10.99,
+    "chave-de-fenda": 10.99,
     "serrote":30.00,
 };
 
 const estoque={
     "parafuso": 100,
     "martelo":4,
-    "chave de fenda": 6,
+    "chave-de-fenda": 6,
     "serrote":1000,
 };
 
@@ -28,15 +28,30 @@ function calcularPreco(){
         document.getElementById("resultado").innerHTML = valortotal.toFixed(2); //exibir o resultado 
         estoque[escolha] -= qtd; // calculo do estoque pra quando for tirando
         window.alert("compra realizada com sucesso "  + "valor total: " + valortotal.toFixed(2))
-         
+    
     // aparece a mensagem na tela se não tive mais nada no estoque 
     }else{
         window.alert("ESTOQUE INDISPONIVEL")
     }
-    console.log(estoque[escolha]) 
-  
-    
+    console.log(estoque[escolha])    
+}
 
 
-    
+function adicionarEstoque (){
+
+        let qtd = parseInt(document.getElementById("quantidade-estoque").value);// pega aquantidade atual digitada 
+        let escolha = document.getElementById("produto-estoque").value;//pega o nome do produto selecionado 
+        console.log(escolha);
+        //pra ve o que tem no estoque 
+        if(qtd > 0){
+             
+            estoque[escolha] += qtd; // calculo do estoque pra quando for tirando
+            console.log(estoque[escolha]);
+            window.alert("Adicionado no estoque com sucesso ")
+        
+        // aparece a mensagem na tela se não tive mais nada no estoque 
+        }else{
+            window.alert("ESTOQUE INDISPONIVEL")
+        }
+                
 }
