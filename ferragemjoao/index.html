@@ -9,26 +9,27 @@
 <body>
     <div class="container">
         <div class="product-card">
-            <h1 class="title">Ferragens João</h1>
-            <p class="product-label">Produto:</p>
+            <h1 class="title">Ferragens João 🛠️</h1>
+            <p class="product-label">Selecione o produto:</p>
             <select class="product-list" id="produto">
-                <option value="martelo">martelo</option>
-                <option value="parafuso">parafuso</option>
-                <option value="prego">prego</option>
-                <option value="chave de fenda ">chave de fenda</option>
-            <option value="serrote">serrote</option>
+                <option value="martelo">Martelo</option>
+                <option value="parafuso">Parafuso</option>
+                <option value="prego">Prego</option>
+                <option value="chave de fenda">Chave de Fenda</option>
+                <option value="serrote">Serrote</option>
             </select>
             
             <p class="quantity-label">Quantidade:</p>
-            <input type="number" id="quantidade" class="quantity-input" min="0" value="1">
+            <input type="number" id="quantidade" class="quantity-input" min="1" value="1">
             
             <div class="buttons">
-                <button class="add-to-cart">ADICIONAR AO CARRINHO</button>
-                <button onclick="calcularPreco()">CALCULAR PREÇO</button>
+                <button class="add-to-cart" onclick="adicionarAoCarrinho()">Adicionar ao Carrinho</button>
+                <button class="calculate-price" onclick="calcularPreco()">Calcular Preço</button>
             </div>
+
+            <div id="mensagem" class="mensagem"></div>
             <h4 id="resultado"></h4>
         </div>
-        
     </div>
     <script src="script.js"></script>
 </body>

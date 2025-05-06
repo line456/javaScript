@@ -1,42 +1,52 @@
-//MARTELO, PREGO, ALICATE, PARAFUSO
-//19,90     10,00    23,00   a = 10
-
-const precos={ //dicionario
-    "parafuso":19.90,
-    "martelo":23.70,
+const precos = {
+    "parafuso": 19.90,
+    "martelo": 23.70,
     "chave de fenda": 10.99,
-    "serrote":30.00,
+    "serrote": 30.00,
+    "prego": 10.00
 };
 
-const estoque={
+const estoque = {
     "parafuso": 100,
-    "martelo":4,
+    "martelo": 4,
     "chave de fenda": 6,
-    "serrote":1000,
+    "serrote": 1000,
+    "prego": 50
 };
 
-//ACESSAR GUARDAR A QUANTIDAde
-//calcular o preço total 
-function calcularPreco(){
+function calcularPreco() {
+    const qtd = parseInt(document.getElementById("quantidade").value);
+    const escolha = document.getElementById("produto").value.trim();
+    const resultado = document.getElementById("resultado");
+    const mensagem = document.getElementById("mensagem");
 
-    let qtd = document.getElementById("quantidade").value;// pega aquantidade atual digitada 
-    let escolha = document.getElementById("produto").value;//pega o nome do produto selecionado 
-    let valortotal = qtd * precos[escolha] // calcular o valor total multiplicando o preço do produto pela quantidade
-    //DECISAO
-    //pra ve o que tem no estoque 
-    if(estoque[escolha] - qtd >= 0){
-        document.getElementById("resultado").innerHTML = valortotal.toFixed(2); //exibir o resultado 
-        estoque[escolha] -= qtd; // calculo do estoque pra quando for tirando
-        window.alert("compra realizada com sucesso "  + "valor total: " + valortotal.toFixed(2))
-         
-    // aparece a mensagem na tela se não tive mais nada no estoque 
-    }else{
-        window.alert("ESTOQUE INDISPONIVEL")
+    if (!precos[escolha]) {
+        resultado.textContent = "Produto inválido.";
+        return;
     }
-    console.log(estoque[escolha]) 
-  
-    
 
+    const valortotal = qtd * precos[escolha];
 
-    
+    if (estoque[escolha] >= qtd) {
+        resultado.textContent = `Valor total: R$ ${valortotal.toFixed(2)}`;
+        estoque[escolha] -= qtd;
+        exibirMensagem(`Compra realizada com sucesso! Estoque restante: ${estoque[escolha]}`, 'sucesso');
+    } else {
+        exibirMensagem("Estoque indisponível para essa quantidade.", 'erro');
+    }
+
+    console.log(estoque);  // Para debug
+}
+
+function adicionarAoCarrinho() {
+    const produto = document.getElementById("produto").value.trim();
+    const quantidade = document.getElementById("quantidade").value;
+    exibirMensagem(`${quantidade} x ${produto} adicionado(s) ao carrinho.`, 'sucesso');
+}
+
+function exibirMensagem(texto, tipo) {
+    const mensagem = document.getElementById("mensagem");
+    mensagem.textContent = texto;
+    mensagem.className = `mensagem ${tipo}`;
+    mensagem.style.display = 'block';
 }
